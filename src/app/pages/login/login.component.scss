@@ -1,0 +1,25 @@
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    width: 200vh;
+
+    background: var(--color-orange);
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FC8D45;
+}
+
+.container-login-central{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+    height: 40%;
+    
+    background-color: var(--color-gray);
+    background-image: radial-gradient(58.97% 173.89% at 84.19% 82.45%, rgba(239, 231, 231, 0.17) 23.56%, rgba(0, 0, 0, 0.08) 81.66%), rgba(228, 220, 220, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 38px;
+}
