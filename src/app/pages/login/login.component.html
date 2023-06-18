@@ -1,5 +1,50 @@
-<div class="container-login">
-    <div class="container-login-central">
-        
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container-login">
+        <div class="container-login-central">
+            <div class="container-header">
+                <div class="titulo-login">
+                    Login
+                </div>
+            </div>
+
+            <div class="container-form">
+                <form class="form-inputs" [formGroup] = "loginForm" (submit)="loginUser()">
+                    <div class="group-input">
+                        <div class="text-info">
+                            <i class="bi bi-envelope envelope-icon"></i>
+                            <input class="input-form" type="email" name="email" id="email" placeholder="Seu endereço de e-mail" formControlName="email" required="">
+                            <label *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="erro-input">Campo Obrigatório!</label>
+                        </div>
+                        <div class="text-info">
+                            <i class="bi bi-key lock-icon"></i>
+                            <input class="input-form" type="password" name="senha" id="senha" placeholder="Digite a sua senha" formControlName="password" required="">
+                            <label *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched" class="erro-input">Campo Obrigatório!</label>
+                        </div>
+                    </div>
+                    
+                    <div class="group-input">
+                        <div class="remember-forgot">
+                            <div class="remember-me">
+                                <input type="checkbox" id="remember-me">
+                                <label for="remember-me">Lembrar-me</label>
+                            </div>
+                            <div class="forgot-password">
+                                <a href="#" class="link-forgot">Esqueceu a senha?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-login" [ngClass]="{'disabled' : !loginForm.valid}" [disabled]="!loginForm.valid">Login</button>
+                </form>
+            </div>
+        </div>
     </div>
-</div>
+</body>
+
+</html>

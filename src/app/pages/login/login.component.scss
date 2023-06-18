@@ -1,25 +1,154 @@
-.container-login{
+.container-login {
     display: flex;
     justify-content: center;
     align-items: center;
-
     height: 100vh;
-    width: 200vh;
-
-    background: var(--color-orange);
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #FC8D45;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), var(--color-orange);
 }
 
-.container-login-central{
-    display:grid;
+.container-login-central {
+    display: grid;
     justify-content: center;
     align-items: center;
-
-    width: 30%;
-    height: 40%;
-    
-    background-color: var(--color-gray);
-    background-image: radial-gradient(58.97% 173.89% at 84.19% 82.45%, rgba(239, 231, 231, 0.17) 23.56%, rgba(0, 0, 0, 0.08) 81.66%), rgba(228, 220, 220, 0.8);
+    width: 43%;
+    height: 48%;
+    background: radial-gradient(58.97% 173.89% at 84.19% 82.45%, rgba(239, 231, 231, 0.17) 23.56%, rgba(0, 0, 0, 0.08) 81.66%), rgba(228, 220, 220, 0.8);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 38px;
+}
+
+.container-header {
+    position: relative;
+}
+
+.titulo-login {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vw;
+    line-height: 6.1vw;
+    color: var(--color-black);
+    position: absolute;
+    top: -18px; 
+    right: 44vh;
+}
+
+.container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.group-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px; 
+}
+
+.remember-me {
+    display: flex;
+}
+
+.remember-me label {
+    font-family: 'Inter';
+    font-size: 1.5vw;
+    margin-left: 5px;
+}
+
+.forgot-password {
+    display: flex;
+}
+
+.forgot-password a {
+    font-family: 'Inter';
+    font-size: 1.5vw;
+    color: var(--color-orange); 
+}
+
+.link-forgot {
+    color: var(--color-orange);
+    margin-left: 17vh; 
+}
+
+.btn-login {
+    font-family: 'Inter';
+    font-size: 1.8vw;
+    padding: 10px 15px;
+    background-color: var(--color-orange); 
+    color: white;
+    border: none;
+    width: 100%;
+    max-width: 100vh; 
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.input-form {
+    font-family: 'Inter';
+    font-size: 1.3vw;
+    padding: 10px 15px;
+    background-color: transparent;
+    width: 55vh;
+    border-color: transparent;
+    border-bottom-color: var(--color-black);
+}
+
+.input-form:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.envelope-icon,
+.lock-icon {
+    font-size: 20px;
+}
+
+.erro-input{
+    font-size: 14px;
+    color: red;
+}
+
+.disabled{
+    opacity: 0.6;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="checkbox"]::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-black); 
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked::before {
+    background-color: var(--color-orange); 
+    border-color: var(--color-orange); 
 }
