@@ -15,18 +15,18 @@
             </div>
 
             <div class="container-form">
-                <form class="form-inputs" [formGroup] = "loginForm" (submit)="loginUser()">
+                <form class="form-inputs" [formGroup]="loginForm" (ngSubmit)="loginUser()">
                     <div class="group-input">
                         <div class="text-info">
                             <i class="bi bi-envelope envelope-icon"></i>
-                            <input class="input-form" type="email" name="email" id="email" placeholder="Seu endereço de e-mail" formControlName="email" required="">
-                            <label *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="erro-input">Campo Obrigatório!</label>
-                        </div>
+                            <input class="input-form" type="email" name="email" id="email"
+                            [placeholder]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched ? 'Campo Obrigatório!' : 'Seu endereço de e-mail'"
+                            formControlName="email" required [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">                        </div>
                         <div class="text-info">
                             <i class="bi bi-key lock-icon"></i>
-                            <input class="input-form" type="password" name="senha" id="senha" placeholder="Digite a sua senha" formControlName="password" required="">
-                            <label *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched" class="erro-input">Campo Obrigatório!</label>
-                        </div>
+                            <input class="input-form" type="password" name="senha" id="senha"
+                            [placeholder]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched ? 'Campo Obrigatório!' : 'Digite a sua senha'"
+                            formControlName="password" required [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">                        </div>
                     </div>
                     
                     <div class="group-input">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn-login" [ngClass]="{'disabled' : !loginForm.valid}" [disabled]="!loginForm.valid">Login</button>
+                    <button type="submit" class="btn-login" [ngClass]="{'disabled' : loginForm.invalid}" [disabled]="loginForm.invalid">Login</button>
                 </form>
             </div>
         </div>
