@@ -21,12 +21,12 @@
                             <i class="bi bi-envelope envelope-icon"></i>
                             <input class="input-form" type="email" name="email" id="email"
                             [placeholder]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched ? 'Campo Obrigatório!' : 'Seu endereço de e-mail'"
-                            formControlName="email" required [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">                        </div>
+                            formControlName="email" required [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"></div>
                         <div class="text-info">
                             <i class="bi bi-key lock-icon"></i>
                             <input class="input-form" type="password" name="senha" id="senha"
                             [placeholder]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched ? 'Campo Obrigatório!' : 'Digite a sua senha'"
-                            formControlName="password" required [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">                        </div>
+                            formControlName="password" required [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"></div>
                     </div>
                     
                     <div class="group-input">

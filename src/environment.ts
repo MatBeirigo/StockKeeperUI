@@ -1,5 +1,5 @@
-export const environment = 
+export const environment =
 {
     production: false,
-    endPoint : 'http://localhost:7068/api'
-};
+    endPoint: 'https://localhost:7254/api'
+}
