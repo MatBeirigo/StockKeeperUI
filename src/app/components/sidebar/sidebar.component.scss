@@ -1,0 +1,29 @@
+.container-sidebar {
+    position: fixed;
+    left: 40px; 
+    top: 53%;
+    transform: translateY(-50%);
+
+    border-radius: 38px;
+    background: rgba(228, 220, 220, 0.80);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    width: 200px;
+    height: 80vh;
+
+    z-index: 99999;
+}
+
+.cabecalho{
+    color: #000;
+    font-size: 40px;
+    font-family: 'Inter';
+    font-weight: 700;
+}
+
+.grupo-menu{}
+
+.container-icone-menu{}
+
+.caixa-menu{}
+
+.caixa-menu-texto{}
