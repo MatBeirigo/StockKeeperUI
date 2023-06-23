@@ -1,29 +1,75 @@
 .container-sidebar {
     position: fixed;
     left: 40px; 
-    top: 53%;
+    top: 55%;
     transform: translateY(-50%);
 
     border-radius: 38px;
     background: rgba(228, 220, 220, 0.80);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     width: 200px;
-    height: 80vh;
+    height: 85vh;
 
     z-index: 99999;
 }
 
 .cabecalho{
-    color: #000;
+    color: var(--color-black);
     font-size: 40px;
     font-family: 'Inter';
-    font-weight: 700;
+    font-weight: 600;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    margin-top: 10%;
+
+    cursor: pointer;
+}
+
+.divider{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.20);
+
+    margin-bottom: 10%;
 }
 
 .grupo-menu{}
 
-.container-icone-menu{}
+.container-icone-menu{
+    padding: 8px;
+}
 
-.caixa-menu{}
+.caixa-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-.caixa-menu-texto{}
+    padding: 8px;
+    margin-bottom: 10%;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+.caixa-menu-texto{
+    font-size: 20px;
+    font-family: 'Inter';
+    font-weight: 500;
+    color: var(--color-black);
+    margin-left: 10px;
+}
+
+.caixa-menu-select{
+    background-color: var(--color-orange);
+}

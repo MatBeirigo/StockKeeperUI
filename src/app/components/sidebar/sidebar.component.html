@@ -5,16 +5,60 @@
 
     <body>
         <div class="container-sidebar">
-            <div class="cabecalho">
+            <div class="cabecalho" (click) = "selectMenu(1)">
                 <h1>StockKeeper</h1>
             </div>
+
+            <div class="divider"></div>
+            
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto">
-                        Sistema
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(2)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 2, '' : this.menuService.menuSelecionado != 2}">
+                        Estoque
                     </div>
                 </div>
             </div>
+
+            <div class="grupo-menu">
+                <div class="container-icone-menu">
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(3)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 3, '' : this.menuService.menuSelecionado != 3}">
+                        Comercial
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-menu">
+                <div class="container-icone-menu">
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(4)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 4, '' : this.menuService.menuSelecionado != 4}">
+                        Checkout
+                    </div>
+                </div>
+            </div>
+
+            <div class="grupo-suporte">
+                <div class="grupo-menu">
+                    <div class="container-icone-menu">
+                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(8)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 8, '' : this.menuService.menuSelecionado != 8}">
+                            Configurções
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="grupo-menu">
+                    <div class="container-icone-menu">
+                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(9)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 9, '' : this.menuService.menuSelecionado != 9}">
+                            Suporte
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="rodape">
+                
+            </div>
+
         </div>
     </body>
 </html>
