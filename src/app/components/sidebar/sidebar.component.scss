@@ -11,13 +11,16 @@
     height: 85vh;
 
     z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .cabecalho{
     color: var(--color-black);
     font-size: 40px;
     font-family: 'Inter';
-    font-weight: 600;
+    font-weight: bold;
 
     justify-content: center;
     align-items: center;
@@ -43,7 +46,13 @@
     margin-bottom: 10%;
 }
 
-.grupo-menu{}
+.grupo-menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 20px; 
+    margin-bottom: 0px;
+}
 
 .container-icone-menu{
     padding: 8px;
@@ -54,16 +63,20 @@
     justify-content: center;
     align-items: center;
 
-    padding: 8px;
-    margin-bottom: 10%;
+    // padding: 3px;
+    margin-bottom: 2%;
     border-radius: 10px;
     transition: 0.3s;
 
     cursor: pointer;
 }
 
+.icone-menu {
+    margin-right: 8px;
+}
+
 .caixa-menu-texto{
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Inter';
     font-weight: 500;
     color: var(--color-black);
@@ -71,5 +84,47 @@
 }
 
 .caixa-menu-select{
-    background-color: var(--color-orange);
+    // background-color: var(--color-orange);
+    color: var(--color-orange);
+}
+
+.grupo-suporte {
+    margin-top: auto;
+    margin-left: -20px;
+}
+
+.rodape {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 15px;
+    padding-top: 0px;
+}
+
+.icone-usuario {
+    font-size: 24px;
+    color: var(--color-black);
+    margin-right: 5px;
+}
+
+.container-usuario {
+    display: flex;
+    flex-direction: column;
+}
+
+.nome-usuario {
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+.cargo-usuario {
+    font-size: 14px;
+    color: var(--color-gray);
+}
+
+.icone-logout {
+    font-size: 24px;
+    color: var(--color-black);
+    margin-left: auto;
 }

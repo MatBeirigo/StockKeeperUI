@@ -1,6 +1,8 @@
 <html>
     <head>
         <title>Barra do lado</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
 
     <body>
@@ -14,6 +16,7 @@
             <div class="grupo-menu">
                 <div class="container-icone-menu">
                     <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(2)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 2, '' : this.menuService.menuSelecionado != 2}">
+                        <i class="bi bi-box-seam icone-menu"></i>
                         Estoque
                     </div>
                 </div>
@@ -22,6 +25,7 @@
             <div class="grupo-menu">
                 <div class="container-icone-menu">
                     <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(3)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 3, '' : this.menuService.menuSelecionado != 3}">
+                        <i class="bi bi-wallet2 icone-menu"></i>
                         Comercial
                     </div>
                 </div>
@@ -30,6 +34,7 @@
             <div class="grupo-menu">
                 <div class="container-icone-menu">
                     <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(4)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 4, '' : this.menuService.menuSelecionado != 4}">
+                        <i class="bi bi-cash-coin icone-menu"></i>
                         Checkout
                     </div>
                 </div>
@@ -39,6 +44,7 @@
                 <div class="grupo-menu">
                     <div class="container-icone-menu">
                         <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(8)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 8, '' : this.menuService.menuSelecionado != 8}">
+                            <i class="bi bi-gear icone-menu"></i>
                             Configurções
                         </div>
                     </div>
@@ -47,6 +53,7 @@
                 <div class="grupo-menu">
                     <div class="container-icone-menu">
                         <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(9)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 9, '' : this.menuService.menuSelecionado != 9}">
+                            <i class="bi bi-headset icone-menu"></i>
                             Suporte
                         </div>
                     </div>
@@ -56,9 +63,14 @@
             <div class="divider"></div>
 
             <div class="rodape">
-                
+                <i class="bi bi-person-circle icone-usuario"></i>
+                <div class="container-usuario">
+                <div class="nome-usuario">Usuário</div>
+                <div class="cargo-usuario">Cargo</div>
+                </div>
+                <i class="bi bi-door-open icone-logout"></i>
             </div>
-
+            
         </div>
     </body>
 </html>
