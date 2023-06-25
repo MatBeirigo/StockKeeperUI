@@ -7,7 +7,7 @@
 
     <body>
         <div class="container-sidebar">
-            <div class="cabecalho" (click) = "selectMenu(1)">
+            <div class="cabecalho" (click) = "selectMenu(10)">
                 <h1>StockKeeper</h1>
             </div>
 
@@ -15,7 +15,7 @@
             
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(2)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 2, '' : this.menuService.menuSelecionado != 2}">
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(20)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 20, '' : this.menuService.menuSelecionado != 20}">
                         <i class="bi bi-box-seam icone-menu"></i>
                         Estoque
                     </div>
@@ -24,7 +24,7 @@
 
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(3)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 3, '' : this.menuService.menuSelecionado != 3}">
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(30)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 30, '' : this.menuService.menuSelecionado != 30}">
                         <i class="bi bi-wallet2 icone-menu"></i>
                         Comercial
                     </div>
@@ -33,7 +33,7 @@
 
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(4)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 4, '' : this.menuService.menuSelecionado != 4}">
+                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(40)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 40, '' : this.menuService.menuSelecionado != 40}">
                         <i class="bi bi-cash-coin icone-menu"></i>
                         Checkout
                     </div>
@@ -43,7 +43,7 @@
             <div class="grupo-suporte">
                 <div class="grupo-menu">
                     <div class="container-icone-menu">
-                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(8)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 8, '' : this.menuService.menuSelecionado != 8}">
+                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(80)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 80, '' : this.menuService.menuSelecionado != 80}">
                             <i class="bi bi-gear icone-menu"></i>
                             Configurções
                         </div>
@@ -52,7 +52,7 @@
     
                 <div class="grupo-menu">
                     <div class="container-icone-menu">
-                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(9)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 9, '' : this.menuService.menuSelecionado != 9}">
+                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(90)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 90, '' : this.menuService.menuSelecionado != 90}">
                             <i class="bi bi-headset icone-menu"></i>
                             Suporte
                         </div>

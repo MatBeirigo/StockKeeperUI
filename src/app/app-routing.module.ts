@@ -16,6 +16,15 @@ const routes: Routes = [
   },
   {
     path:'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule)
+  },
+  {
+    path:'estoque', loadChildren: () => import('./pages/estoque/estoque.module').then(m => m.EstoqueModule)
+  },
+  {
+    path:'comercial', loadChildren: () => import('./pages/comercial/comercial.module').then(m => m.ComercialModule)
+  },
+  {
+    path:'checkout', loadChildren: () => import('./pages/checkout/checkout.module').then(m => m.CheckoutModule)
   }
 ];
 

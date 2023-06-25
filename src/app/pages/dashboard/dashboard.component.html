@@ -6,6 +6,33 @@
     <body class="background">
         <navbar></navbar>
         <sidebar></sidebar>
-        <box></box>
+        <box>
+            <div class="card-container" (click) = "selectMenu(20)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 20, '' : this.menuService.menuSelecionado != 20}">
+                <div class="container-icone-card">
+                    <div class="caixa-card caixa-card-texto">
+                        <i class="bi bi-box-seam icone-menu"></i>
+                        Sistema de Estoque
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" (click) = "selectMenu(30)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 30, '' : this.menuService.menuSelecionado != 30}">
+                <div class="container-icone-card">
+                    <div class="caixa-card caixa-card-texto">
+                        <i class="bi bi-wallet2 icone-menu"></i>
+                        Sistema Comercial
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container" (click) = "selectMenu(40)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 40, '' : this.menuService.menuSelecionado != 40}">
+                <div class="container-icone-card">
+                    <div class="caixa-card caixa-card-texto">
+                        <i class="bi bi-cash-coin icone-menu"></i>
+                        Sistema de Checkout
+                    </div>
+                </div>
+            </div>
+        </box>
     </body>
 </html>

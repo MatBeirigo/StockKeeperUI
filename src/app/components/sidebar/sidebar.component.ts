@@ -15,22 +15,22 @@ export class SidebarComponent {
   
   selectMenu(menu:number){
     switch(menu){
-      case 1:
+      case 10:
         this.router.navigate(['/dashboard']);
         break;
-      case 2:
+      case 20:
         this.router.navigate(['/estoque']);
         break;
-      case 3:
+      case 30:
         this.router.navigate(['/comercial']);
         break;
-      case 4:
+      case 40:
         this.router.navigate(['/checkout']);
         break;
-      case 8:
+      case 80:
         this.router.navigate(['/configuracoes']);
       break;
-      case 9:
+      case 90:
         this.router.navigate(['/suporte']);
       break;
       default:
