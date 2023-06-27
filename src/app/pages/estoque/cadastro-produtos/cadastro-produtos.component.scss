@@ -1,0 +1,20 @@
+
+
+.erro-input {
+    font-family: 'Inter';
+    font-size: 1.3vw;
+    color: red;
+    margin-top: 5px;
+}
+
+.input-form.invalid {
+    border-bottom-color: red;
+}
+
+.input-form.invalid::placeholder {
+    color: red;
+}
+
+.disabled{
+    opacity: 0.6;
+}

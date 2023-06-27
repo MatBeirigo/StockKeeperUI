@@ -10,10 +10,11 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent {
 
-  constructor(public formBuilder: FormBuilder, 
+  constructor(
+    public formBuilder: FormBuilder, 
     private router: Router,
-    private loginService: LoginService) { 
-  }
+    private loginService: LoginService
+    ) {}
 
   loginForm: FormGroup;
 
@@ -29,9 +30,12 @@ export class LoginComponent {
   }
 
   loginUser(){
-    this.loginService.login(this.dadosForm["email"].value, this.dadosForm["password"].value).subscribe(
+    this.loginService
+      .login(
+        this.dadosForm["email"].value, 
+        this.dadosForm["password"].value
+      ).subscribe(
       token => {
-        // alert(token);
         this.router.navigate(['/dashboard']);
       },
       err => {

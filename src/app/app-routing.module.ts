@@ -21,6 +21,9 @@ const routes: Routes = [
     path:'estoque', loadChildren: () => import('./pages/estoque/estoque.module').then(m => m.EstoqueModule)
   },
   {
+    path:'cadastroprodutos', loadChildren: () => import('./pages/estoque/cadastro-produtos/cadastro-produtos.module').then(m => m.CadastroProdutosModule)
+  },
+  {
     path:'comercial', loadChildren: () => import('./pages/comercial/comercial.module').then(m => m.ComercialModule)
   },
   {

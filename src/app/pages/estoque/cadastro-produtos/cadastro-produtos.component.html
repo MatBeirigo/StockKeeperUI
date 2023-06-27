@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Cadastro de produtos</title>
+</head>
+
+<body class="background">
+    <navbar></navbar>
+    <sidebar></sidebar>
+    <box>
+        <form class="form-inputs" [formGroup]="produtoForm">
+            <input class="input-form" type="text" name="nome" id="nome" formControlName="NomeProduto"
+                [placeholder]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched ? 'O Nome do Produto é Obrigatório!' : 'Nome do Produto'"
+                required
+                [class.invalid]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched" />
+
+            <select class="input-form" name="categoria" id="categoria" formControlName="Categoria"
+            (change)="exibirCamposAdicionais(dadosForm['Categoria'].value)">
+                <option value="">Selecione a Categoria</option>
+                <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+            </select>
+
+            <div *ngFor="let campo of camposAdicionais">
+                <input class="input-form" type="text" [name]="campo" [id]="campo" [formControlName]="campo"
+                    [placeholder]="campo" />
+            </div>
+
+            <button type="button" class="btn-padrao" (click)="CadastrarProduto()">Cadastrar</button>
+        </form>
+    </box>
+</body>
+
+</html>

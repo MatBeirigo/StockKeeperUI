@@ -3,17 +3,22 @@ import { CommonModule } from '@angular/common';
 import { NavbarModule } from 'src/app/components/navbar/navbar.module';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
 import { BoxModule } from 'src/app/components/box/box.module';
-import { EstoqueRoutingModule } from './Estoque-routing.module';
-import { EstoqueComponent } from './estoque.component';
+import { CadastroProdutosRoutingModule } from './Cadastro-produtos-routing.module';
+import { CadastroProdutosComponent } from './cadastro-produtos.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule(
     {
         providers: [],
-        declarations: [EstoqueComponent],
+        declarations: [CadastroProdutosComponent],
         imports: [
             CommonModule,
-            EstoqueRoutingModule,
+            ReactiveFormsModule,
+            HttpClientModule,
+            CadastroProdutosRoutingModule,
             NavbarModule,
             SidebarModule,
             BoxModule
@@ -21,4 +26,4 @@ import { EstoqueComponent } from './estoque.component';
     }
 )
 
-export class EstoqueModule{}
+export class CadastroProdutosModule{}
