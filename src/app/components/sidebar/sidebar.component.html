@@ -1,76 +1,89 @@
 <html>
-    <head>
-        <title>Barra do lado</title>
 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    </head>
+<head>
+    <title>Barra do lado</title>
 
-    <body>
-        <div class="container-sidebar">
-            <div class="cabecalho" (click) = "selectMenu(10)">
-                <h1>StockKeeper</h1>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <div class="container-sidebar">
+        <div class="cabecalho" (click)="selectMenu(10)">
+            <h1>StockKeeper</h1>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grupo-menu">
+            <div class="container-icone-menu">
+                <div class="caixa-menu caixa-menu-texto" (click)="selectMenu(20)"
+                    [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 20, '': this.menuService.menuSelecionado != 20}">
+                    <i class="bi bi-box-seam icone-menu"></i>
+                    Estoque
+                    <i class="bi bi-chevron-down icone-submenu" (click)="toggleSubMenu($event)"></i>
+                </div>
+                <div class="submenu" *ngIf="menuService.submenuOpen">
+                    <div class="submenu-item" (click)="selectMenu(21)"
+                        [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 21, '': this.menuService.menuSelecionado != 21}">
+                        Cadastrar Produto</div>
+                </div>
             </div>
+        </div>
 
-            <div class="divider"></div>
-            
+        <div class="grupo-menu">
+            <div class="container-icone-menu">
+                <div class="caixa-menu caixa-menu-texto" (click)="selectMenu(30)"
+                    [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 30, '' : this.menuService.menuSelecionado != 30}">
+                    <i class="bi bi-wallet2 icone-menu"></i>
+                    Comercial
+                </div>
+            </div>
+        </div>
+
+        <div class="grupo-menu">
+            <div class="container-icone-menu">
+                <div class="caixa-menu caixa-menu-texto" (click)="selectMenu(40)"
+                    [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 40, '' : this.menuService.menuSelecionado != 40}">
+                    <i class="bi bi-cash-coin icone-menu"></i>
+                    Checkout
+                </div>
+            </div>
+        </div>
+
+        <div class="grupo-suporte">
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(20)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 20, '' : this.menuService.menuSelecionado != 20}">
-                        <i class="bi bi-box-seam icone-menu"></i>
-                        Estoque
+                    <div class="caixa-menu caixa-menu-texto" (click)="selectMenu(80)"
+                        [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 80, '' : this.menuService.menuSelecionado != 80}">
+                        <i class="bi bi-gear icone-menu"></i>
+                        Configurções
                     </div>
                 </div>
             </div>
 
             <div class="grupo-menu">
                 <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(30)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 30, '' : this.menuService.menuSelecionado != 30}">
-                        <i class="bi bi-wallet2 icone-menu"></i>
-                        Comercial
+                    <div class="caixa-menu caixa-menu-texto" (click)="selectMenu(90)"
+                        [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 90, '' : this.menuService.menuSelecionado != 90}">
+                        <i class="bi bi-headset icone-menu"></i>
+                        Suporte
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="grupo-menu">
-                <div class="container-icone-menu">
-                    <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(40)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 40, '' : this.menuService.menuSelecionado != 40}">
-                        <i class="bi bi-cash-coin icone-menu"></i>
-                        Checkout
-                    </div>
-                </div>
-            </div>
+        <div class="divider"></div>
 
-            <div class="grupo-suporte">
-                <div class="grupo-menu">
-                    <div class="container-icone-menu">
-                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(80)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 80, '' : this.menuService.menuSelecionado != 80}">
-                            <i class="bi bi-gear icone-menu"></i>
-                            Configurções
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="grupo-menu">
-                    <div class="container-icone-menu">
-                        <div class="caixa-menu caixa-menu-texto" (click) = "selectMenu(90)" [ngClass]="{'caixa-menu-select' : this.menuService.menuSelecionado == 90, '' : this.menuService.menuSelecionado != 90}">
-                            <i class="bi bi-headset icone-menu"></i>
-                            Suporte
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="rodape">
-                <i class="bi bi-person-circle icone-usuario"></i>
-                <div class="container-usuario">
+        <div class="rodape">
+            <i class="bi bi-person-circle icone-usuario"></i>
+            <div class="container-usuario">
                 <div class="nome-usuario">Usuário</div>
                 <div class="cargo-usuario">Cargo</div>
-                </div>
-                <i class="bi bi-door-open icone-logout"></i>
             </div>
-            
+            <i class="bi bi-door-open icone-logout"></i>
         </div>
-    </body>
+
+    </div>
+</body>
+
 </html>

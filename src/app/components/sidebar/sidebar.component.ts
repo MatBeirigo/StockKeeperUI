@@ -8,10 +8,9 @@ import { MenuService } from 'src/app/services/menu.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  constructor(private router: Router, public menuService: MenuService) 
-  { 
+  subMenus: { [key: string]: boolean } = {};
 
-  }
+  constructor(private router: Router, public menuService: MenuService) {}
   
   selectMenu(menu:number){
     switch(menu){
@@ -20,6 +19,9 @@ export class SidebarComponent {
         break;
       case 20:
         this.router.navigate(['/estoque']);
+        break;
+      case 21:
+        this.router.navigate(['/cadastroprodutos']);
         break;
       case 30:
         this.router.navigate(['/comercial']);
@@ -37,5 +39,15 @@ export class SidebarComponent {
         break;
     }
     this.menuService.menuSelecionado = menu;
+  }
+  
+  toggleSubMenu(event: Event) {
+    event.stopPropagation();
+    
+    if (this.menuService.submenuOpen) {
+      this.menuService.closeSubMenu();
+    } else {
+      this.menuService.openSubMenu();
+    }
   }
 }

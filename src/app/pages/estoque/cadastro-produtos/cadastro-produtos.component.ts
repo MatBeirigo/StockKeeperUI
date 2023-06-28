@@ -14,6 +14,7 @@ export class CadastroProdutosComponent implements OnInit {
   camposAdicionais: string[] = [];
 
   produtoForm: FormGroup;
+  menuService: any;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -56,6 +57,8 @@ export class CadastroProdutosComponent implements OnInit {
         console.error('Ocorreu um erro ao carregar as unidades:', error);
       }
     );
+
+    this.menuService.menuSelecionado = 21;
   }
 
   get dadosForm() {

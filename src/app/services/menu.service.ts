@@ -6,8 +6,17 @@ import { environment } from 'src/environment';
     providedIn: 'root'
 })
 
-export class MenuService{
+export class MenuService {
     constructor() { }
 
     menuSelecionado: number;
+    submenuOpen: boolean = false;
+
+    openSubMenu() {
+        this.submenuOpen = true;
+    }
+
+    closeSubMenu() {
+        this.submenuOpen = false;
+    }
 }
