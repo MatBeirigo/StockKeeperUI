@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment';
 import { Observable } from 'rxjs';
 import { Produto } from '../models/produto.model';
+import { Fornecedor } from '../models/fornecedores.model';
 
 @Injectable({
     providedIn: 'root'
@@ -22,5 +23,9 @@ export class CadastroProdutosService {
 
     ListarUnidades(): Observable<string[]> {
         return this.httpClient.get<string[]>(`${this.baseUrl}/ListarUnidades`);
+    }
+
+    ListarFornecedores(): Observable<Fornecedor[]> {
+        return this.httpClient.get<Fornecedor[]>(`${this.baseUrl}/ListarFornecedores`);
     }
 }

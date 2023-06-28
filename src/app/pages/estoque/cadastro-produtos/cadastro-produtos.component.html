@@ -37,10 +37,15 @@
                         </div>
                     </div>
                     <div class="group-input">
-                        <select class="input-form" name="unidades" id="unidades" formControlName="Unidade"
-                        (change)="exibirCamposAdicionais(dadosForm['Unidades'].value)">
+                        <select class="input-form" name="unidades" id="unidades" formControlName="Unidade">
                             <option value="">Selecione a unidade</option>
                             <option *ngFor="let unidade of unidades" [value]="unidade">{{ unidade }}</option>
+                        </select>
+                    </div>
+                    <div class="group-input">
+                        <select class="input-form" name="fornecedores" id="fornecedores" formControlName="Fornecedor">
+                            <option value="">Selecione o Fornecedor</option>
+                            <option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.nomeFantasia">{{ fornecedor.nomeFantasia }}</option>
                         </select>
                     </div>
                     <div class="group-input">

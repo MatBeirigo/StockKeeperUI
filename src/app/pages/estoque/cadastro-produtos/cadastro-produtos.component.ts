@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Produto } from 'src/app/models/produto.model';
 import { CadastroProdutosService } from 'src/app/services/cadastroprodutos.service';
+import { Fornecedor } from 'src/app/models/fornecedores.model';
 
 @Component({
   selector: 'app-cadastro-produtos',
@@ -9,12 +10,13 @@ import { CadastroProdutosService } from 'src/app/services/cadastroprodutos.servi
   styleUrls: ['./cadastro-produtos.component.scss']
 })
 export class CadastroProdutosComponent implements OnInit {
-  categorias: String[];
-  unidades: String[];
+  categorias: string[];
+  unidades: string[];
+  fornecedores: Fornecedor[];
+
   camposAdicionais: string[] = [];
 
   produtoForm: FormGroup;
-  menuService: any;
 
   constructor(
     public formBuilder: FormBuilder,
@@ -58,7 +60,15 @@ export class CadastroProdutosComponent implements OnInit {
       }
     );
 
-    this.menuService.menuSelecionado = 21;
+    this.cadastroProdutosService.ListarFornecedores().subscribe(
+      (fornecedores: Fornecedor[]) => {
+        console.log(fornecedores);
+        this.fornecedores = fornecedores;
+      },
+      error => {
+        console.error('Ocorreu um erro ao carregar os fornecedores:', error);
+      }
+    );
   }
 
   get dadosForm() {
