@@ -24,6 +24,9 @@ const routes: Routes = [
     path:'cadastroprodutos', loadChildren: () => import('./pages/estoque/cadastro-produtos/cadastro-produtos.module').then(m => m.CadastroProdutosModule)
   },
   {
+    path:'cadastrofornecedor', loadChildren: () => import('./pages/estoque/cadastro-fornecedor/cadastro-fornecedor.module').then(m => m.CadastroFornecedorModule)
+  },
+  {
     path:'comercial', loadChildren: () => import('./pages/comercial/comercial.module').then(m => m.ComercialModule)
   },
   {

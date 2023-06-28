@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Cadastro de produtos</title>
 </head>
@@ -24,16 +23,14 @@
                         [class.invalid]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched" />
                     </div>
                     <div class="group-input">
-                        <select class="input-form" name="categoria" id="categoria" formControlName="Categoria"
-                        (change)="exibirCamposAdicionais(dadosForm['Categoria'].value)">
+                        <select class="input-form" name="categoria" id="categoria" formControlName="Categoria" (change)="exibirCamposAdicionais(dadosForm['Categoria'].value)">
                             <option value="">Selecione a Categoria</option>
                             <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
                         </select>
                     </div>
                     <div class="group-input">
                         <div *ngFor="let campo of camposAdicionais">
-                            <input class="input-form" type="text" [name]="campo" [id]="campo" [formControlName]="campo"
-                                [placeholder]="campo" />
+                            <input class="input-form" type="text" [name]="campo" [id]="campo" [formControlName]="campo" [placeholder]="campo" />
                         </div>
                     </div>
                     <div class="group-input">
@@ -45,7 +42,7 @@
                     <div class="group-input">
                         <select class="input-form" name="fornecedores" id="fornecedores" formControlName="Fornecedor">
                             <option value="">Selecione o Fornecedor</option>
-                            <option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.nomeFantasia">{{ fornecedor.nomeFantasia }}</option>
+                            <option *ngFor="let fornecedor of fornecedores" [value]="fornecedor.razaoSocial">{{ fornecedor.razaoSocial }}</option>
                         </select>
                     </div>
                     <div class="group-input">

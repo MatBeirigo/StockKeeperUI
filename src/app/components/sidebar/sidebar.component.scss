@@ -58,17 +58,15 @@
     padding: 8px;
 }
 
-.caixa-menu{
+.caixa-menu {
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    padding: 3px;
+    padding-bottom: 4px;
     margin-bottom: 2%;
     border-radius: 10px;
     transition: 0.3s;
-
     cursor: pointer;
+    width: 100%; 
 }
 
 .icone-menu {
@@ -87,6 +85,8 @@
     margin-left: 20px; 
     margin-bottom: 0px;
     cursor: pointer;
+    font-size: 13px;
+    padding: 3px;
 }
 
 .caixa-menu-texto{

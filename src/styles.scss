@@ -3,20 +3,20 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
-:root{
+:root {
     --color-white: #FFFFFF;
     --color-black: #000000;
     --color-gray: #ACA6A6;
     --color-orange: #FC8D45;
 }
 
-body{
+body {
     font-family: "Inter", sans-serif;
-    margin: 0; 
-    
-    &.background{
-        background: rgb(171,171,171);
-        background: linear-gradient(38deg, rgba(171,171,171,1) 11%, rgba(219,219,219,1) 99%, rgba(219,219,219,1) 99%);
+    margin: 0;
+
+    &.background {
+        background: rgb(171, 171, 171);
+        background: linear-gradient(38deg, rgba(171, 171, 171, 1) 11%, rgba(219, 219, 219, 1) 99%, rgba(219, 219, 219, 1) 99%);
         position: fixed;
         top: 0;
         left: 0;
@@ -25,7 +25,7 @@ body{
     }
 }
 
-input{
+input {
     font-size: 20px;
     font-family: Inter;
     font-weight: 300;
@@ -40,12 +40,12 @@ input:focus {
     background-color: transparent;
 }
 
-textarea{
+textarea {
     font-size: 20px;
     font-family: Inter;
     font-weight: 300;
     border-radius: 15px;
-    
+
     padding: 5px;
 
     background-color: transparent;
@@ -57,7 +57,7 @@ textarea:focus {
     background-color: transparent;
 }
 
-select{
+select {
     font-size: 20px;
     font-family: Inter;
     font-weight: 300;
@@ -71,7 +71,7 @@ select:focus {
     background-color: transparent;
 }
 
-select option{
+select option {
     font-size: 20px;
     font-family: Inter;
     font-weight: 300;
@@ -85,10 +85,10 @@ select option:focus {
     background-color: transparent;
 }
 
-button{
+button {
     cursor: pointer;
 
-    &.btn-padrao{
+    &.btn-padrao {
         background-color: var(--color-orange);
         color: var(--color-white);
         border: none;
@@ -97,5 +97,8 @@ button{
         font-size: 20px;
         font-weight: 300;
         font-family: Inter;
+        margin-top: 20px;
+        position: relative;
+        left: 38%;
     }
 }

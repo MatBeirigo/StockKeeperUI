@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>Cadastro de fornecedores</title>
+</head>
+<body class="background">
+    <navbar></navbar>
+    <sidebar></sidebar>
+    <box>
+        <div class="container-central">
+            <div class="container-header">
+                <div class="titulo-cadastro">
+                    Cadastro de Fornecedor
+                </div>
+            </div>
+
+            <!-- TODO: Colocar máscara e validações nos campos de input -->
+
+            <div class="container-body">
+                <form class="form-inputs" [formGroup]="fornecedorForm">
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="NomeFantasia" id="NomeFantasia" formControlName="NomeFantasia"
+                            [placeholder]="fornecedorForm.get('NomeFantasia')?.invalid && fornecedorForm.get('NomeFantasia')?.touched ? 'O Nome Fantasia é Obrigatório!' : 'Nome Fantasia'"
+                            required
+                            [class.invalid]="fornecedorForm.get('NomeFantasia')?.invalid && fornecedorForm.get('NomeFantasia')?.touched" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="RazaoSocial" id="RazaoSocial" formControlName="RazaoSocial" placeholder="Razão Social" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="number" name="Cnpj" id="Cnpj" formControlName="Cnpj" placeholder="CNPJ"/>
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="number" name="Cpf" id="Cpf" formControlName="Cpf" placeholder="CPF" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="number" name="Cep" id="Cep" formControlName="Cep" placeholder="CEP" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="Endereco" id="Endereco" formControlName="Endereco" placeholder="Endereço" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="Cidade" id="Cidade" formControlName="Cidade" placeholder="Cidade" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="Estado" id="Estado" formControlName="Estado" placeholder="Estado" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="number" name="Telefone" id="Telefone" formControlName="Telefone" placeholder="Telefone" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="email" name="Email" id="Email" formControlName="Email" placeholder="E-mail" />
+                    </div>
+                    <div class="group-input">
+                        <input class="input-form" type="url" name="Site" id="Site" formControlName="Site" placeholder="Site" />
+                    </div>
+                    
+                </form>
+                <button type="button" class="btn-padrao" (click)="cadastrarFornecedor()">Cadastrar</button>
+            </div>
+        </div>
+    </box>
+</body>
+</html>

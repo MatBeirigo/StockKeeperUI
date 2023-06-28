@@ -10,10 +10,10 @@ import { MenuService } from 'src/app/services/menu.service';
 export class SidebarComponent {
   subMenus: { [key: string]: boolean } = {};
 
-  constructor(private router: Router, public menuService: MenuService) {}
-  
-  selectMenu(menu:number){
-    switch(menu){
+  constructor(private router: Router, public menuService: MenuService) { }
+
+  selectMenu(menu: number) {
+    switch (menu) {
       case 10:
         this.router.navigate(['/dashboard']);
         break;
@@ -23,6 +23,9 @@ export class SidebarComponent {
       case 21:
         this.router.navigate(['/cadastroprodutos']);
         break;
+      case 22:
+        this.router.navigate(['/cadastrofornecedor']);
+        break;
       case 30:
         this.router.navigate(['/comercial']);
         break;
@@ -31,19 +34,19 @@ export class SidebarComponent {
         break;
       case 80:
         this.router.navigate(['/configuracoes']);
-      break;
+        break;
       case 90:
         this.router.navigate(['/suporte']);
-      break;
+        break;
       default:
         break;
     }
     this.menuService.menuSelecionado = menu;
   }
-  
+
   toggleSubMenu(event: Event) {
     event.stopPropagation();
-    
+
     if (this.menuService.submenuOpen) {
       this.menuService.closeSubMenu();
     } else {

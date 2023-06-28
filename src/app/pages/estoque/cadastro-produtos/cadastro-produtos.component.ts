@@ -62,7 +62,6 @@ export class CadastroProdutosComponent implements OnInit {
 
     this.cadastroProdutosService.ListarFornecedores().subscribe(
       (fornecedores: Fornecedor[]) => {
-        console.log(fornecedores);
         this.fornecedores = fornecedores;
       },
       error => {

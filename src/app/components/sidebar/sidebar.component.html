@@ -27,6 +27,11 @@
                         [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 21, '': this.menuService.menuSelecionado != 21}">
                         Cadastrar Produto</div>
                 </div>
+                <div class="submenu" *ngIf="menuService.submenuOpen">
+                    <div class="submenu-item" (click)="selectMenu(22)"
+                        [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 22, '': this.menuService.menuSelecionado != 22}">
+                        Cadastrar Fornecedor</div>
+                </div>
             </div>
         </div>
 
