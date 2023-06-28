@@ -44,6 +44,9 @@ textarea{
     font-size: 20px;
     font-family: Inter;
     font-weight: 300;
+    border-radius: 15px;
+    
+    padding: 5px;
 
     background-color: transparent;
     border-color: var(--color-black);
@@ -64,6 +67,20 @@ select{
 }
 
 select:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+select option{
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 300;
+
+    background-color: transparent;
+    border-color: var(--color-black);
+}
+
+select option:focus {
     outline: none;
     background-color: transparent;
 }

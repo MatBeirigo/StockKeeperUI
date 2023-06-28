@@ -19,4 +19,8 @@ export class CadastroProdutosService {
     ListarCategoria(): Observable<string[]> {
         return this.httpClient.get<string[]>(`${this.baseUrl}/ListarCategorias`);
     }
+
+    ListarUnidades(): Observable<string[]> {
+        return this.httpClient.get<string[]>(`${this.baseUrl}/ListarUnidades`);
+    }
 }

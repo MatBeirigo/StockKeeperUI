@@ -8,26 +8,48 @@
     <navbar></navbar>
     <sidebar></sidebar>
     <box>
-        <form class="form-inputs" [formGroup]="produtoForm">
-            <input class="input-form" type="text" name="nome" id="nome" formControlName="NomeProduto"
-                [placeholder]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched ? 'O Nome do Produto é Obrigatório!' : 'Nome do Produto'"
-                required
-                [class.invalid]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched" />
-
-            <select class="input-form" name="categoria" id="categoria" formControlName="Categoria"
-            (change)="exibirCamposAdicionais(dadosForm['Categoria'].value)">
-                <option value="">Selecione a Categoria</option>
-                <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
-            </select>
-
-            <div *ngFor="let campo of camposAdicionais">
-                <input class="input-form" type="text" [name]="campo" [id]="campo" [formControlName]="campo"
-                    [placeholder]="campo" />
+        <div class="container-central">
+            <div class="container-header">
+                <div class="titulo-cadastro">
+                    Cadastro de Produto
+                </div>
             </div>
-
-            <button type="button" class="btn-padrao" (click)="CadastrarProduto()">Cadastrar</button>
-        </form>
+    
+            <div class="container-body">
+                <form class="form-inputs" [formGroup]="produtoForm">
+                    <div class="group-input">
+                        <input class="input-form" type="text" name="nome" id="nome" formControlName="NomeProduto"
+                        [placeholder]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched ? 'O Nome do Produto é Obrigatório!' : 'Nome do Produto'"
+                        required
+                        [class.invalid]="produtoForm.get('NomeProduto')?.invalid && produtoForm.get('NomeProduto')?.touched" />
+                    </div>
+                    <div class="group-input">
+                        <select class="input-form" name="categoria" id="categoria" formControlName="Categoria"
+                        (change)="exibirCamposAdicionais(dadosForm['Categoria'].value)">
+                            <option value="">Selecione a Categoria</option>
+                            <option *ngFor="let categoria of categorias" [value]="categoria">{{ categoria }}</option>
+                        </select>
+                    </div>
+                    <div class="group-input">
+                        <div *ngFor="let campo of camposAdicionais">
+                            <input class="input-form" type="text" [name]="campo" [id]="campo" [formControlName]="campo"
+                                [placeholder]="campo" />
+                        </div>
+                    </div>
+                    <div class="group-input">
+                        <select class="input-form" name="unidades" id="unidades" formControlName="Unidade"
+                        (change)="exibirCamposAdicionais(dadosForm['Unidades'].value)">
+                            <option value="">Selecione a unidade</option>
+                            <option *ngFor="let unidade of unidades" [value]="unidade">{{ unidade }}</option>
+                        </select>
+                    </div>
+                    <div class="group-input">
+                        <textarea class="input-form" name="descricao" id="descricao" formControlName="Descricao" placeholder="Descrição"></textarea>
+                    </div>
+                </form>
+                <button type="button" class="btn-padrao" (click)="CadastrarProduto()">Cadastrar</button>
+            </div>
+        </div>
     </box>
 </body>
-
 </html>

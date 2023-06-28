@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Produto } from 'src/app/models/produto.model';
 import { CadastroProdutosService } from 'src/app/services/cadastroprodutos.service';
-import { MenuService } from 'src/app/services/menu.service';
-import { Categoria } from 'src/app/models/categoria.model';
 
 @Component({
   selector: 'app-cadastro-produtos',
@@ -11,20 +9,18 @@ import { Categoria } from 'src/app/models/categoria.model';
   styleUrls: ['./cadastro-produtos.component.scss']
 })
 export class CadastroProdutosComponent implements OnInit {
-  categorias: string[];
+  categorias: String[];
+  unidades: String[];
   camposAdicionais: string[] = [];
 
   produtoForm: FormGroup;
 
   constructor(
-    public menuService: MenuService,
     public formBuilder: FormBuilder,
     private cadastroProdutosService: CadastroProdutosService
   ) {}
 
   ngOnInit(): void {
-    this.menuService.menuSelecionado = 21;
-
     this.produtoForm = this.formBuilder.group({
       NomeProduto: ['', [Validators.required]],
       Categoria: [''],
@@ -45,11 +41,19 @@ export class CadastroProdutosComponent implements OnInit {
 
     this.cadastroProdutosService.ListarCategoria().subscribe(
       (categorias: string[]) => {
-        console.log('Categorias:', categorias);
-        this.categorias = categorias.sort();
+        this.categorias = categorias;
       },
       error => {
         console.error('Ocorreu um erro ao carregar as categorias:', error);
+      }
+    );
+
+    this.cadastroProdutosService.ListarUnidades().subscribe(
+      (unidades: string[]) => {
+        this.unidades = unidades;
+      },
+      error => {
+        console.error('Ocorreu um erro ao carregar as unidades:', error);
       }
     );
   }
@@ -61,11 +65,10 @@ export class CadastroProdutosComponent implements OnInit {
   exibirCamposAdicionais(categoria: string): void {
     this.camposAdicionais = [];
 
-    if (categoria === 'roupa') {
+    if (categoria === 'Roupas') {
       this.camposAdicionais.push('Cor');
-    } else if (categoria === 'outro') {
-      // Adicione outras condições para outras categorias, se necessário
-      // Exemplo: this.camposAdicionais.push('CampoAdicional');
+    } else if (categoria === 'Alimentos') {
+      this.camposAdicionais.push('Sabor');
     }
   }
 
