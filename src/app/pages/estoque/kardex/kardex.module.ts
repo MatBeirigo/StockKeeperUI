@@ -2,17 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarModule } from 'src/app/components/navbar/navbar.module';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
-import { CheckoutComponent } from './checkout.component';
-import { CheckoutRoutingModule } from './Checkout-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { KardexComponent } from './kardex.component';
+import { KardexRoutingModule } from './Kardex-routing.module';
 import { BoxModule } from 'src/app/components/box/box.module';
+
+
 
 @NgModule(
     {
         providers: [],
-        declarations: [CheckoutComponent],
+        declarations: [KardexComponent],
         imports: [
             CommonModule,
-            CheckoutRoutingModule,
+            ReactiveFormsModule,
+            HttpClientModule,
+            KardexRoutingModule,
             NavbarModule,
             SidebarModule,
             BoxModule
@@ -20,4 +26,4 @@ import { BoxModule } from 'src/app/components/box/box.module';
     }
 )
 
-export class CheckoutModule{}
+export class KardexModule{}

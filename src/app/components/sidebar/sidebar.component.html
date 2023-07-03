@@ -25,12 +25,22 @@
                 <div class="submenu" *ngIf="menuService.submenuOpen">
                     <div class="submenu-item" (click)="selectMenu(21)"
                         [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 21, '': this.menuService.menuSelecionado != 21}">
-                        Cadastrar Produto</div>
+                        Ficha Estoque</div>
                 </div>
                 <div class="submenu" *ngIf="menuService.submenuOpen">
                     <div class="submenu-item" (click)="selectMenu(22)"
                         [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 22, '': this.menuService.menuSelecionado != 22}">
+                        Cadastrar Produto</div>
+                </div>
+                <div class="submenu" *ngIf="menuService.submenuOpen">
+                    <div class="submenu-item" (click)="selectMenu(23)"
+                        [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 23, '': this.menuService.menuSelecionado != 23}">
                         Cadastrar Fornecedor</div>
+                </div>
+                <div class="submenu" *ngIf="menuService.submenuOpen">
+                    <div class="submenu-item" (click)="selectMenu(24)"
+                        [ngClass]="{'caixa-menu-select': this.menuService.menuSelecionado == 24, '': this.menuService.menuSelecionado != 21}">
+                        Relatórios</div>
                 </div>
             </div>
         </div>

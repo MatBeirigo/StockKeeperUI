@@ -1,0 +1,74 @@
+.background {
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.container-box {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-kardex {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    line-height: 6.1vw;
+    color: var(--color-black);
+}
+
+.buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.tabela-produtos {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+.tabela-produtos th {
+    background-color: #f0f0f0;
+}
+
+.tabela-produtos-row-even {
+    background-color: #f8f8f8;
+}
+
+.search-input {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid var(--color-black);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}

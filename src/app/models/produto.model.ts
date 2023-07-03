@@ -14,5 +14,5 @@ export interface Produto {
     DimensaoEmbalagem: number | 0;
     Descricao: string | '';
     InformacoesFiscais: string | '';
-    CodigoBarras: number | 0;
+    CodigoBarras: bigint | 0;
 }

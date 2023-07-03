@@ -2,28 +2,28 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarModule } from 'src/app/components/navbar/navbar.module';
 import { SidebarModule } from 'src/app/components/sidebar/sidebar.module';
-import { CadastroProdutosRoutingModule } from './Cadastro-produtos-routing.module';
-import { CadastroProdutosComponent } from './cadastro-produtos.component';
+import { FichaEstoqueRoutingModule } from './Ficha-estoque-routing.module';
+import { FichaEstoqueComponent } from './ficha-estoque.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BoxModule } from 'src/app/components/box/box.module';
-
-
+import { DatatableGenericoModule } from 'src/app/components/datatable-generico/datatable-generico.module';
 
 @NgModule(
     {
         providers: [],
-        declarations: [CadastroProdutosComponent],
+        declarations: [FichaEstoqueComponent],
         imports: [
             CommonModule,
             ReactiveFormsModule,
             HttpClientModule,
-            CadastroProdutosRoutingModule,
+            FichaEstoqueRoutingModule,
             NavbarModule,
             SidebarModule,
-            BoxModule
+            BoxModule,
+            DatatableGenericoModule
         ]
     }
 )
 
-export class CadastroProdutosModule{}
+export class FichaEstoqueModule{}

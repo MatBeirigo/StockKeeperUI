@@ -21,9 +21,12 @@ export class SidebarComponent {
         this.router.navigate(['/estoque']);
         break;
       case 21:
-        this.router.navigate(['/cadastroprodutos']);
+        this.router.navigate(['/fichaestoque']);
         break;
       case 22:
+        this.router.navigate(['/cadastroprodutos']);
+        break;
+      case 23:
         this.router.navigate(['/cadastrofornecedor']);
         break;
       case 30:

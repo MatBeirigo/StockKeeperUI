@@ -30,10 +30,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -94,10 +98,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css",
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.js"
+            ]
           }
         }
       }

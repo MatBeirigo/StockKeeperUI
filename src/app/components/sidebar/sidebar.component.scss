@@ -31,21 +31,6 @@
     cursor: pointer;
 }
 
-.divider{
-    justify-content: center;
-    align-items: center;
-    display: flex;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    width: 80%;
-    height: 1px;
-    background: rgba(0, 0, 0, 0.20);
-
-    margin-bottom: 10%;
-}
-
 .grupo-menu{
     display: flex;
     justify-content: flex-start;

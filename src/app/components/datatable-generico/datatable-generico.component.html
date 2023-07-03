@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>DataTable Genérico</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    </head>
+
+    <body>
+        <div class="container-box">
+            <div class="container-central">
+                <div class="container-header">
+                    <div class="buttons-container">
+                        <button class="btn btn-print" (click)="printDataTable()">Imprimir</button>
+                        <button class="btn btn-export" (click)="exportToExcel()">Exportar para Excel</button>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" (input)="applyFilter($event)" placeholder="Pesquisar...">
+                </div>
+                
+                <table class="tabela-produtos">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let coluna of colunas">{{ coluna }}</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let element of dataSource">
+                            <td *ngFor="let coluna of colunas">{{ element[coluna] }}</td>
+                            <td>
+                                <button (click)="dispararAcao(element.id)">Ver Kardex</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [length]="filteredData?.length || 0"
+                    (page)="onPageChanged($event)">
+                </mat-paginator>
+            </div>
+        </div>
+    </body>
+</html>

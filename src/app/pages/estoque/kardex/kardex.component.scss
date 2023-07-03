@@ -1,0 +1,35 @@
+.container-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px;
+}
+
+.titulo-kardex {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    line-height: 6.1vw;
+    color: var(--color-black);
+    margin: 10px;
+}
+
+.container-central {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container-body {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+.tabela-produtos {
+    width: 100%;
+    padding-top: 30px;
+}

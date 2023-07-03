@@ -25,6 +25,16 @@ body {
     }
 }
 
+td{
+    padding: 10px;
+    text-align: center;
+}
+
+th{
+    padding: 10px;
+    text-align: center;
+}
+
 input {
     font-size: 20px;
     font-family: Inter;
@@ -101,4 +111,19 @@ button {
         position: relative;
         left: 38%;
     }
+}
+
+.divider{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 80%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.20);
+
+    margin-bottom: 10%;
 }
