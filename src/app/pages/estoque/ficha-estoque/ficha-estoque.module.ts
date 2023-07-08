@@ -7,7 +7,6 @@ import { FichaEstoqueComponent } from './ficha-estoque.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BoxModule } from 'src/app/components/box/box.module';
-import { DatatableGenericoModule } from 'src/app/components/datatable-generico/datatable-generico.module';
 
 @NgModule(
     {
@@ -21,7 +20,6 @@ import { DatatableGenericoModule } from 'src/app/components/datatable-generico/d
             NavbarModule,
             SidebarModule,
             BoxModule,
-            DatatableGenericoModule
         ]
     }
 )

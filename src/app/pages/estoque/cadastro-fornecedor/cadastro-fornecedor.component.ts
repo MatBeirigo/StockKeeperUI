@@ -29,7 +29,8 @@ export class CadastroFornecedorComponent implements OnInit{
       Estado: [''],
       Telefone: [''],
       Email: [''],
-      Site: ['']
+      Site: [''],
+      TipoFornecedor: [''],
     });
   }
 

@@ -32,12 +32,23 @@
 }
 
 .btn {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
     margin-left: 10px;
     padding: 5px 10px;
     background-color: #e0e0e0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+
+    &.saida{
+        background-color: #f48181;
+    }
+
+    &.entrada{
+        background-color: #81f4a1;
+    }
 }
 
 .btn:hover {

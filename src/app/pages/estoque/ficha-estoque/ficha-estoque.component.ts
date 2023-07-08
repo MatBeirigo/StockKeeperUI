@@ -12,7 +12,7 @@ import * as XLSX from 'xlsx';
 export class FichaEstoqueComponent implements OnInit {
   produto: any[] = []; 
   filteredProduto: any[];
-  colunasTabela: string[] = ['Nome', 'Categoria', 'Classificação', 'Quantidade', 'Fornecedor'];
+  colunasTabela: string[] = ['Nome', 'Categoria', 'Classificação', 'Fornecedor'];
   pageSize: number = 10;
   pageSizeOptions: number[] = [5, 10, 25, 50];
   p: number = 1;
@@ -56,7 +56,7 @@ export class FichaEstoqueComponent implements OnInit {
 
   exportToExcel() {
     const excelData: any[] = [];
-    const header = ['Nome', 'Categoria', 'Classificação', 'Quantidade', 'Fornecedor'];
+    const header = ['Nome', 'Categoria', 'Classificação', 'Fornecedor'];
 
     excelData.push(header);
 
@@ -65,7 +65,6 @@ export class FichaEstoqueComponent implements OnInit {
         item.nomeProduto,
         item.categoria,
         item.classificacao,
-        item.quantidade,
         item.fornecedor
       ];
 
@@ -104,7 +103,10 @@ export class FichaEstoqueComponent implements OnInit {
     );
   }
 
-  openKardex(id: number) {
-    // Lógica para abrir a ficha kardex do produto com o ID fornecido
+  Kardex(id: number) {
   }
+
+  EntradaEstoque(id: number) {}
+
+  SaidaEstoque(id: number) {}
 }

@@ -3,9 +3,6 @@ export interface Produto {
     Codigo: null;
     Categoria: string | '';
     Classificacao: string | '';
-    ValorCompra: number | 0;
-    ValorVenda: number | 0;
-    Quantidade: number | 0;
     Cor: string | '';
     Sabor: string | '';
     Fornecedor: string | '';

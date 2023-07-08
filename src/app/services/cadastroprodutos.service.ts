@@ -17,6 +17,10 @@ export class CadastroProdutosService {
     return this.httpClient.post<Produto>(`${this.baseUrl}/AdicionarProduto`, produto);
     }
 
+    CadastrarUnidade(unidade: string): Observable<any> {
+        return this.httpClient.post<any>(`${this.baseUrl}/AdicionarUnidade`, { Nome: unidade });
+    }
+
     ListarCategoria(): Observable<string[]> {
         return this.httpClient.get<string[]>(`${this.baseUrl}/ListarCategorias`);
     }

@@ -13,10 +13,9 @@ export class CadastroProdutosComponent implements OnInit {
   categorias: string[];
   unidades: string[];
   fornecedores: Fornecedor[];
-
   camposAdicionais: string[] = [];
-
   produtoForm: FormGroup;
+  novaUnidade = '';
 
   constructor(
     public formBuilder: FormBuilder,
@@ -28,9 +27,6 @@ export class CadastroProdutosComponent implements OnInit {
       NomeProduto: ['', [Validators.required]],
       Categoria: [''],
       Classificacao: [''],
-      ValorCompra: [''],
-      ValorVenda: [''],
-      Quantidade: [''],
       Cor: [''],
       Sabor: [''],
       Fornecedor: [''],
@@ -88,15 +84,6 @@ export class CadastroProdutosComponent implements OnInit {
     if (this.produtoForm.valid) {
       const produto: Produto = { ...this.produtoForm.value };
 
-      if (!produto.ValorCompra) {
-        produto.ValorCompra = 0;
-      }
-      if (!produto.ValorVenda) {
-        produto.ValorVenda = 0;
-      }
-      if (!produto.Quantidade) {
-        produto.Quantidade = 0;
-      }
       if (!produto.Peso) {
         produto.Peso = 0;
       }

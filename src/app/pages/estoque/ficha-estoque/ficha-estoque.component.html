@@ -4,6 +4,7 @@
     <title>Ficha de Estoque</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body class="background">
@@ -31,7 +32,6 @@
                                 <th>Nome</th>
                                 <th>Categoria</th>
                                 <th>Classificação</th>
-                                <th>Quantidade</th>
                                 <th>Fornecedor</th>
                                 <th>Ações</th>
                             </tr>
@@ -42,10 +42,11 @@
                                 <td>{{ item.nomeProduto }}</td>
                                 <td>{{ item.categoria }}</td>
                                 <td>{{ item.classificacao }}</td>
-                                <td>{{ item.quantidade }}</td>
                                 <td>{{ item.fornecedor }}</td>
                                 <td>
-                                    <button class="btn btn-view" (click)="openKardex(item.id)">Ver Kardex</button>
+                                    <button class="btn btn-view entrada" (click)="EntradaEstoque(item.id)">Entrada</button> |
+                                    <button class="btn btn-view saida" (click)="SaidaEstoque(item.id)">Saída</button> |
+                                    <button class="btn btn-view" (click)="Kardex(item.id)">Ver Kardex</button>
                                 </td>
                             </tr>
                         </tbody>

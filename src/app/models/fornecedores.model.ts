@@ -11,4 +11,5 @@ export interface Fornecedor {
     telefone: string;
     email: string;
     site: string;
+    TipoFornecedor: string;
 }
