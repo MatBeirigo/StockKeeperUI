@@ -7,6 +7,7 @@ import { FichaEstoqueComponent } from './ficha-estoque.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BoxModule } from 'src/app/components/box/box.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule(
     {
@@ -20,6 +21,7 @@ import { BoxModule } from 'src/app/components/box/box.module';
             NavbarModule,
             SidebarModule,
             BoxModule,
+            NgxDatatableModule
         ]
     }
 )

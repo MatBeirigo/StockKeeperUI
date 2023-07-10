@@ -2,10 +2,6 @@ import { Component, ElementRef, OnInit, AfterViewInit, ViewChild } from '@angula
 import { FormBuilder } from '@angular/forms';
 import { KardexService } from 'src/app/services/kardex.service';
 import { MenuService } from 'src/app/services/menu.service';
-import * as $ from 'jquery';
-import 'datatables.net';
-import 'datatables.net-buttons';
-
 @Component({
   selector: 'app-kardex',
   templateUrl: './kardex.component.html',
@@ -46,7 +42,7 @@ export class KardexComponent implements OnInit, AfterViewInit {
 
   initializeDataTable() {
     if (this.produto && this.produto.length > 0) {
-      const table = $(this.dataTableElement.nativeElement);
+      const table = (this.dataTableElement.nativeElement);
       this.dataTable = table.DataTable({
         data: this.produto,
         columns: [
