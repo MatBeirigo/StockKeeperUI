@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment';
 import { Observable } from 'rxjs';
 import { Produto } from '../models/produto.model';
+import { Estoque } from '../models/estoque.model';
 
 @Injectable({
     providedIn: 'root'
@@ -15,5 +16,9 @@ export class KardexService {
 
     ListarProdutos(): Observable<Produto[]> {
         return this.httpClient.get<Produto[]>(`${this.baseUrl}/ListarProdutos`);
+    }
+
+    ProcurarProdutoNoEstoque(codigo: string): Observable<any> {
+        return this.httpClient.get<Estoque>(`${this.baseUrl}/ObterProdutoPorId?Id=${codigo}`);
     }
 }

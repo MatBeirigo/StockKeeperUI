@@ -24,7 +24,7 @@ const routes: Routes = [
     path:'fichaestoque', loadChildren: () => import('./pages/estoque/ficha-estoque/ficha-estoque.module').then(m => m.FichaEstoqueModule)
   },
   {
-    path:'kardex', loadChildren: () => import('./pages/estoque/kardex/kardex.module').then(m => m.KardexModule)
+    path:'kardex/:codigo', loadChildren: () => import('./pages/estoque/kardex/kardex.module').then(m => m.KardexModule)
   },
   {
     path:'cadastroprodutos', loadChildren: () => import('./pages/estoque/cadastro-produtos/cadastro-produtos.module').then(m => m.CadastroProdutosModule)

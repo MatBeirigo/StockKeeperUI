@@ -4,6 +4,7 @@ import { EstoqueService } from 'src/app/services/estoque.service';
 import { MenuService } from 'src/app/services/menu.service';
 
 declare var DataTable: any;
+declare var $: any;
 
 @Component({
   selector: 'app-ficha-estoque',
@@ -34,9 +35,7 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
     );
   }
 
-  ngAfterViewInit() {
-    // Remova a chamada para initializeDataTable() aqui
-  }
+  ngAfterViewInit() {}
 
   initializeDataTable() {
     this.dataTableOptions = {
@@ -50,23 +49,35 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
         {
           title: 'Ações',
           render: (data: any, type: any, full: any) => {
-            return `<button class="btn btn-primary btn-sm" onclick="editar(${full.codigo})">Entrada</button>
-                    <button class="btn btn-danger btn-sm" onclick="excluir(${full.codigo})">Saída</button>
-                    <button class="btn btn-info btn-sm" onclick="kardex(${full.codigo})">Kardex</button>`;
+            return `<button class="btn btn-primary btn-sm">Entrada</button>
+                    <button class="btn btn-danger btn-sm">Saída</button>
+                    <button class="btn btn-info btn-sm kardex-button">Kardex</button>`;
           }
         }
       ],
       paging: true,
       searching: true,
       ordering: true,
-      info: true
+      info: true,
+      responsive: true,
+      lengthMenu: [10, 25, 50, 75, 100],
     };
 
     setTimeout(() => {
       const dataTable = document.querySelector('#datatable');
       if (dataTable) {
-        new DataTable(dataTable, this.dataTableOptions);
+        const dataTableInstance = new DataTable(dataTable, this.dataTableOptions);
+
+        $(dataTable).on('click', '.kardex-button', (event) => {
+          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
+          this.redirectToKardex(codigo);
+        });
       }
     }, 0);
+  }
+
+  redirectToKardex(codigo: string) {
+    console.log('codigo: ', codigo);
+    window.location.href = `/kardex/${codigo}`;
   }
 }
