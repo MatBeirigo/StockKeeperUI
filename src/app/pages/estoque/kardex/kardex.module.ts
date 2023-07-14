@@ -21,7 +21,7 @@ import { BoxModule } from 'src/app/components/box/box.module';
             KardexRoutingModule,
             NavbarModule,
             SidebarModule,
-            BoxModule
+            BoxModule,
         ]
     }
 )

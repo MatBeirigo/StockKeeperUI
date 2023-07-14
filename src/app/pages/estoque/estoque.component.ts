@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Produto } from 'src/app/models/produto.model';
 import { MenuService } from 'src/app/services/menu.service';
 
@@ -13,7 +14,7 @@ export class EstoqueComponent {
 
   constructor(
     public menuService: MenuService,
-    public formBuilder: FormBuilder,
+    public formBuilder: FormBuilder
     ) {}
 
     ngOnInit() {

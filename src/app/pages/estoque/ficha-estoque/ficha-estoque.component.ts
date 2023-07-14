@@ -1,5 +1,8 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { MdbModalRef, MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { ModalEntradaComponent } from 'src/app/components/modalEntrada/modalEntrada.component';
+import { ModalSaidaComponent } from 'src/app/components/modalSaida/modalSaida.component';
 import { EstoqueService } from 'src/app/services/estoque.service';
 import { MenuService } from 'src/app/services/menu.service';
 
@@ -14,11 +17,13 @@ declare var $: any;
 export class FichaEstoqueComponent implements OnInit, AfterViewInit {
   produto: any[] = [];
   dataTableOptions: any = {};
+  modalRef: MdbModalRef<ModalEntradaComponent> | null = null;
 
   constructor(
     public menuService: MenuService,
     public formBuilder: FormBuilder,
-    private estoqueService: EstoqueService
+    private estoqueService: EstoqueService,
+    private modalService: MdbModalService
   ) { }
 
   ngOnInit() {
@@ -49,8 +54,8 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
         {
           title: 'Ações',
           render: (data: any, type: any, full: any) => {
-            return `<button class="btn btn-primary btn-sm">Entrada</button>
-                    <button class="btn btn-danger btn-sm">Saída</button>
+            return `<button class="btn btn-primary btn-sm entrada-button">Entrada</button>
+                    <button class="btn btn-danger btn-sm saida-button">Saída</button>
                     <button class="btn btn-info btn-sm kardex-button">Kardex</button>`;
           }
         }
@@ -68,6 +73,16 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
       if (dataTable) {
         const dataTableInstance = new DataTable(dataTable, this.dataTableOptions);
 
+        $(dataTable).on('click', '.entrada-button', (event) => {
+          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
+          this.modalEntrada(codigo);
+        });
+
+        $(dataTable).on('click', '.saida-button', (event) => {
+          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
+          this.modalSaida(codigo);
+        });
+
         $(dataTable).on('click', '.kardex-button', (event) => {
           const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
           this.redirectToKardex(codigo);
@@ -77,7 +92,14 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
   }
 
   redirectToKardex(codigo: string) {
-    console.log('codigo: ', codigo);
     window.location.href = `/kardex/${codigo}`;
+  }
+
+  modalEntrada(codigo	: string) {
+    this.modalRef = this.modalService.open(ModalEntradaComponent)
+  }
+
+  modalSaida(codigo	: string) {
+    this.modalRef = this.modalService.open(ModalSaidaComponent)
   }
 }
