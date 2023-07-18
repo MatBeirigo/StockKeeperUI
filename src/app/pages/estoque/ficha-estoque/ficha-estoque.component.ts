@@ -17,7 +17,8 @@ declare var $: any;
 export class FichaEstoqueComponent implements OnInit, AfterViewInit {
   produto: any[] = [];
   dataTableOptions: any = {};
-  modalRef: MdbModalRef<ModalEntradaComponent> | null = null;
+  modalEntradaRef: MdbModalRef<ModalEntradaComponent> | null = null;
+  modalSaidaRef: MdbModalRef<ModalSaidaComponent> | null = null;
 
   constructor(
     public menuService: MenuService,
@@ -96,10 +97,10 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
   }
 
   modalEntrada(codigo	: string) {
-    this.modalRef = this.modalService.open(ModalEntradaComponent)
+    this.modalEntradaRef = this.modalService.open(ModalEntradaComponent, { data: { codigo: codigo } });
   }
 
   modalSaida(codigo	: string) {
-    this.modalRef = this.modalService.open(ModalSaidaComponent)
+    this.modalSaidaRef = this.modalService.open(ModalSaidaComponent, { data: { codigo: codigo } });
   }
 }

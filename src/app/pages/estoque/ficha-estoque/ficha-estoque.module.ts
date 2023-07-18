@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BoxModule } from 'src/app/components/box/box.module';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ModalEntradaModule } from 'src/app/components/modalEntrada/modalEntrada.module';
+import { ModalSaidaModule } from 'src/app/components/modalSaida/modalSaida.module';
 
 @NgModule(
     {
@@ -23,6 +24,7 @@ import { ModalEntradaModule } from 'src/app/components/modalEntrada/modalEntrada
             SidebarModule,
             BoxModule,
             ModalEntradaModule,
+            ModalSaidaModule,
             NgxDatatableModule
         ]
     }
