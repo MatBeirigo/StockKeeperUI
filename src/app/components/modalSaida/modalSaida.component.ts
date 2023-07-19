@@ -10,8 +10,9 @@ import { EstoqueService } from 'src/app/services/estoque.service';
   styleUrls: ['./modalSaida.component.scss']
 })
 export class ModalSaidaComponent implements OnInit {
-  @Input() codigo: number;
+  @Input() id: number;
   nomeProduto: string;
+  valorUnitarioEstoque: number;
   estoqueForm: FormGroup;
 
   constructor(
@@ -22,29 +23,25 @@ export class ModalSaidaComponent implements OnInit {
 
   ngOnInit(): void {
     this.estoqueForm = this.formBuilder.group({
-      codigo: [''],
-      produto: [''],
+      id: [''],
+      idEmpresa: [0],
       idAlteracao: [''],
-      dataAlteracao: [new Date()],
-      tipoAlteracao: [''],
-      quantidadeEntrada: [0],
-      quantidadeSaida: [''],
-      quantidadeSaldo: [0],
-      custoEntrada: [0],
-      custoSaida: [''],
-      custoSaldo: [0]
+      produto: [''],
+      quantidadeEstoque: [''],
+      valorEstoque: [0],
+      valorUnitarioEstoque: [0]
     });
 
-    this.estoqueService.ObterEstoque(this.codigo).subscribe(
+    this.estoqueService.ObterEstoque(this.id).subscribe(
       (estoque: any) => {
         this.nomeProduto = estoque.produto;
+        this.valorUnitarioEstoque = estoque.valorUnitarioEstoque;
 
         this.estoqueForm.patchValue({
-          codigo: estoque.codigo,
+          id: estoque.id,
           produto: estoque.produto,
           idAlteracao: estoque.idAlteracao,
-          quantidadeSaldo: estoque.quantidadeSaldo,
-          custoSaldo: estoque.custoSaldo
+          valorUnitarioEstoque: estoque.valorUnitarioEstoque
         });
       },
       (error: any) => {
