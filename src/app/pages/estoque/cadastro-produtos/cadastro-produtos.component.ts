@@ -25,6 +25,7 @@ export class CadastroProdutosComponent implements OnInit {
   ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
       NomeProduto: ['', [Validators.required]],
+      IdEmpresa: [''],
       Categoria: [''],
       Classificacao: [''],
       Cor: [''],
@@ -93,6 +94,11 @@ export class CadastroProdutosComponent implements OnInit {
       if (!produto.CodigoBarras) {
         produto.CodigoBarras = 0;
       }
+      if (!produto.IdEmpresa) {
+        produto.IdEmpresa = 0;
+      }
+
+      console.log(produto);
 
       this.cadastroProdutosService.CadastrarProduto(produto).subscribe(
         () => {

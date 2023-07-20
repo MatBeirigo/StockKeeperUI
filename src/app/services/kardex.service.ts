@@ -18,7 +18,11 @@ export class KardexService {
         return this.httpClient.get<Produto[]>(`${this.baseUrl}/ListarProdutos`);
     }
 
-    ProcurarProdutoNoEstoque(codigo: string): Observable<any> {
-        return this.httpClient.get<Estoque>(`${this.baseUrl}/ObterEstoquePorId/${codigo}`);
+    ProcurarProdutoNoEstoque(id: string): Observable<any> {
+        return this.httpClient.get<Estoque>(`${this.baseUrl}/ObterEstoquePorId/${id}`);
+    }
+
+    ProcurarKardex(id:string): Observable<any> {
+        return this.httpClient.get<Estoque>(`${this.baseUrl}/ObterKardexPorId/${id}`);
     }
 }

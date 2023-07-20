@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { KardexComponent } from './kardex.component';
 import { KardexRoutingModule } from './Kardex-routing.module';
 import { BoxModule } from 'src/app/components/box/box.module';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -22,6 +23,7 @@ import { BoxModule } from 'src/app/components/box/box.module';
             NavbarModule,
             SidebarModule,
             BoxModule,
+            NgxDatatableModule
         ]
     }
 )

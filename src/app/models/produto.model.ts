@@ -1,6 +1,7 @@
 export interface Produto {
+    Id: number;
     NomeProduto: string;
-    Codigo: null;
+    IdEmpresa: number;
     Categoria: string | '';
     Classificacao: string | '';
     Cor: string | '';

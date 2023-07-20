@@ -10,7 +10,7 @@ selector: 'modalEntrada',
   styleUrls: ['./modalEntrada.component.scss']
 })
 export class ModalEntradaComponent implements OnInit {
-  @Input() codigo: number;
+  @Input() id: number;
   nomeProduto: string;
   estoqueForm: FormGroup;
 
@@ -22,29 +22,23 @@ export class ModalEntradaComponent implements OnInit {
 
   ngOnInit(): void {
     this.estoqueForm = this.formBuilder.group({
-      codigo: [''],
-      produto: [''],
+      id: [''],
+      idEmpresa: [0],
       idAlteracao: [''],
-      dataAlteracao: [new Date()],
-      tipoAlteracao: [''],
-      quantidadeEntrada: [''],
-      quantidadeSaida: [0],
-      quantidadeSaldo: [0],
-      custoEntrada: [''],
-      custoSaida: [0],
-      custoSaldo: [0]
+      produto: [''],
+      quantidadeEstoque: [''],
+      valorEstoque: [0],
+      valorUnitarioEstoque: ['']
     });
 
-    this.estoqueService.ObterEstoque(this.codigo).subscribe(
+    this.estoqueService.ObterEstoque(this.id).subscribe(
       (estoque: any) => {
         this.nomeProduto = estoque.produto;
 
         this.estoqueForm.patchValue({
-          codigo: estoque.codigo,
+          id: estoque.id,
           produto: estoque.produto,
           idAlteracao: estoque.idAlteracao,
-          quantidadeSaldo: estoque.quantidadeSaldo,
-          custoSaldo: estoque.custoSaldo
         });
       },
       (error: any) => {

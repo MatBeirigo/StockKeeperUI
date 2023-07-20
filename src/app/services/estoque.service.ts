@@ -27,11 +27,18 @@ export class EstoqueService {
     }
 
     EntradaEstoque(estoque: Estoque): Observable<Estoque> {
-        console.log(estoque);
         return this.httpClient.post<Estoque>(`${this.baseUrl}/EntradaEstoque`, estoque);
     }
 
     SaidaEstoque(estoque: Estoque): Observable<Estoque> {
         return this.httpClient.post<Estoque>(`${this.baseUrl}/SaidaEstoque`, estoque);
     }  
+
+    getQuantidadeEstoque(id: number): Observable<any> {
+        return this.httpClient.post<number>(`${this.baseUrl}/GetQuantidadeEstoque`, id);
+    }
+
+    getValorUnitarioEstoque(id: number): Observable<any> {
+        return this.httpClient.post<number>(`${this.baseUrl}/GetValorUnitarioEstoque`, id);
+    }
 }

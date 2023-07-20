@@ -1,11 +1,20 @@
+.background {
+    background-color: #f0f0f0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.container-box {
+    margin-top: 60px;
+    padding: 20px;
+}
+
 .container-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-top: 50px;
-    margin-left: 30px;
+    margin-bottom: 20px;
 }
 
 .titulo-kardex {
@@ -15,22 +24,18 @@
     font-size: 3vw;
     line-height: 6.1vw;
     color: var(--color-black);
-    margin: 10px;
 }
 
-.container-central {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+#datatableWrapper {
+    overflow-x: auto;
+    max-width: 100%;
 }
 
-.container-body {
-    flex: 1;
-    overflow: auto;
-    padding: 20px;
+.table-responsive {
+    max-height: 400px;
+    overflow-y: scroll;
 }
 
-.tabela-produtos {
-    width: 100%;
-    padding-top: 30px;
+#datatableKardex {
+    font-size: 14px;
 }

@@ -1,13 +1,9 @@
 export interface Estoque {
-    codigo: number;
-    produto: string;
+    id: number;
+    idEmpresa: number;
     idAlteracao: number;
-    dataAlteracao: Date;
-    tipoAlteracao: string;
-    quantidadeEntrada: number;
-    quantidadeSaida: number;
-    quantidadeSaldo: number;
-    custoEntrada: number;
-    custoSaida: number;
-    custoSaldo: number;
+    produto: string;
+    quantidadeEstoque: number;
+    valorEstoque: number;
+    valorUnitarioEstoque: number;
 }

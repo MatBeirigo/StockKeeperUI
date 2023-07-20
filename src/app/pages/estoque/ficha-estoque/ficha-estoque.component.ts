@@ -5,6 +5,7 @@ import { ModalEntradaComponent } from 'src/app/components/modalEntrada/modalEntr
 import { ModalSaidaComponent } from 'src/app/components/modalSaida/modalSaida.component';
 import { EstoqueService } from 'src/app/services/estoque.service';
 import { MenuService } from 'src/app/services/menu.service';
+import { forkJoin } from 'rxjs';
 
 declare var DataTable: any;
 declare var $: any;
@@ -31,9 +32,27 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
     this.menuService.menuSelecionado = 22;
 
     this.estoqueService.ListarProdutos().subscribe(
-      (produto: any[]) => {
-        this.produto = produto;
-        this.initializeDataTable();
+      (produtos: any[]) => {
+        const observables = produtos.map(produto =>
+          forkJoin({
+            quantidade: this.estoqueService.getQuantidadeEstoque(produto.id),
+            valorUnitario: this.estoqueService.getValorUnitarioEstoque(produto.id),
+          })
+        );
+  
+        forkJoin(observables).subscribe(results => {
+          this.produto = produtos.map((produto, index) => ({
+            id: produto.id,
+            nomeProduto: produto.nomeProduto,
+            descricao: produto.descricao,
+            unidade: produto.unidade,
+            fornecedor: produto.fornecedor,
+            quantidade: results[index].quantidade,
+            valorUnitario: results[index].valorUnitario,
+          }));
+  
+          this.initializeDataTable();
+        });
       },
       error => {
         console.error('Ocorreu um erro ao carregar os produtos:', error);
@@ -47,11 +66,19 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
     this.dataTableOptions = {
       data: this.produto,
       columns: [
-        { title: 'Código', data: 'codigo' },
+        { title: 'Id', data: 'id' },
         { title: 'Nome do Produto', data: 'nomeProduto' },
         { title: 'Descrição', data: 'descricao' },
         { title: 'Unidade', data: 'unidade' },
         { title: 'Fornecedor', data: 'fornecedor' },
+        { title: 'Quantidade', data: 'quantidade' },
+        {
+          title: 'Valor Unitário',
+          data: 'valorUnitario',
+          render: (data: any, type: any, full: any) => {
+            return data.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+          }
+        },
         {
           title: 'Ações',
           render: (data: any, type: any, full: any) => {
@@ -75,32 +102,33 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
         const dataTableInstance = new DataTable(dataTable, this.dataTableOptions);
 
         $(dataTable).on('click', '.entrada-button', (event) => {
-          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
-          this.modalEntrada(codigo);
+          const id = dataTableInstance.row($(event.target).closest('tr')).data().id;
+          this.modalEntrada(id);
         });
 
         $(dataTable).on('click', '.saida-button', (event) => {
-          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
-          this.modalSaida(codigo);
+          const id = dataTableInstance.row($(event.target).closest('tr')).data().id;
+          this.modalSaida(id);
         });
 
         $(dataTable).on('click', '.kardex-button', (event) => {
-          const codigo = dataTableInstance.row($(event.target).closest('tr')).data().codigo;
-          this.redirectToKardex(codigo);
+          const id = dataTableInstance.row($(event.target).closest('tr')).data().id;
+          console.log(id);
+          this.redirectToKardex(id);
         });
       }
     }, 0);
   }
 
-  redirectToKardex(codigo: string) {
-    window.location.href = `/kardex/${codigo}`;
+  redirectToKardex(Id: string) {
+    window.location.href = `/kardex/${Id}`;
   }
 
-  modalEntrada(codigo	: string) {
-    this.modalEntradaRef = this.modalService.open(ModalEntradaComponent, { data: { codigo: codigo } });
+  modalEntrada(Id	: string) {
+    this.modalEntradaRef = this.modalService.open(ModalEntradaComponent, { data: { id: Id } });
   }
 
-  modalSaida(codigo	: string) {
-    this.modalSaidaRef = this.modalService.open(ModalSaidaComponent, { data: { codigo: codigo } });
+  modalSaida(Id	: string) {
+    this.modalSaidaRef = this.modalService.open(ModalSaidaComponent, { data: { id: Id } });
   }
 }
