@@ -34,11 +34,11 @@ export class EstoqueService {
         return this.httpClient.post<Estoque>(`${this.baseUrl}/SaidaEstoque`, estoque);
     }  
 
-    getQuantidadeEstoque(id: number): Observable<any> {
+    getQuantidadeEstoque(id: number): Observable<number> {
         return this.httpClient.post<number>(`${this.baseUrl}/GetQuantidadeEstoque`, id);
     }
 
-    getValorUnitarioEstoque(id: number): Observable<any> {
+    getValorUnitarioEstoque(id: number): Observable<number> {
         return this.httpClient.post<number>(`${this.baseUrl}/GetValorUnitarioEstoque`, id);
     }
 }

@@ -14,6 +14,7 @@ declare var DataTable: any;
 export class KardexComponent implements OnInit {
   kardex: any[];
   dataTableOptions: any = {};
+  productName: string;
 
   constructor(
     public menuService: MenuService,
@@ -39,6 +40,7 @@ export class KardexComponent implements OnInit {
             valorUnitarioSaldo: item.valorUnitarioSaldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' }),
             valorTotalSaldo: item.valorTotalSaldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
           }));
+          this.productName = this.kardex[0].produto;
           this.initializeDataTable();
         },
         error => {
@@ -53,7 +55,6 @@ export class KardexComponent implements OnInit {
       data: this.kardex,
       columns: [
         { title: 'Data', data: 'dataAlteracao' },
-        { title: 'Produto', data: 'produto' },
         { title: 'Tipo Alteracao', data: 'tipoAlteracao' },
         { title: 'Quantidade Entrada', data: 'quantidadeEntrada' },
         { title: 'Valor Unitário Entrada', data: 'valorUnitarioEntrada' },

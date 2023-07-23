@@ -39,20 +39,18 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
             valorUnitario: this.estoqueService.getValorUnitarioEstoque(produto.id),
           })
         );
-  
+
         forkJoin(observables).subscribe(results => {
           this.produto = produtos.map((produto, index) => ({
             id: produto.id,
-            nomeProduto: produto.nomeProduto,
             descricao: produto.descricao,
             unidade: produto.unidade,
             fornecedor: produto.fornecedor,
-            quantidade: results[index].quantidade,
-            valorUnitario: results[index].valorUnitario,
+            quantidade: results[index].quantidade, 
+            valorUnitario: results[index].valorUnitario, 
           }));
-  
           this.initializeDataTable();
-        });
+        });        
       },
       error => {
         console.error('Ocorreu um erro ao carregar os produtos:', error);
@@ -67,14 +65,12 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
       data: this.produto,
       columns: [
         { title: 'Id', data: 'id' },
-        { title: 'Nome do Produto', data: 'nomeProduto' },
         { title: 'Descrição', data: 'descricao' },
         { title: 'Unidade', data: 'unidade' },
         { title: 'Fornecedor', data: 'fornecedor' },
         { title: 'Quantidade', data: 'quantidade' },
         {
-          title: 'Valor Unitário',
-          data: 'valorUnitario',
+          title: 'Valor Unitário', data: 'valorUnitario',
           render: (data: any, type: any, full: any) => {
             return data.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
           }
@@ -124,11 +120,11 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
     window.location.href = `/kardex/${Id}`;
   }
 
-  modalEntrada(Id	: string) {
+  modalEntrada(Id: string) {
     this.modalEntradaRef = this.modalService.open(ModalEntradaComponent, { data: { id: Id } });
   }
 
-  modalSaida(Id	: string) {
+  modalSaida(Id: string) {
     this.modalSaidaRef = this.modalService.open(ModalSaidaComponent, { data: { id: Id } });
   }
 }
