@@ -50,10 +50,6 @@ export class ModalSaidaComponent implements OnInit {
     );
   }
 
-  get dadosForm() {
-    return this.estoqueForm.controls;
-  }
-
   SaidaEstoque() {
     const estoque: Estoque = { ...this.estoqueForm.value };
 

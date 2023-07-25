@@ -43,6 +43,7 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
         forkJoin(observables).subscribe(results => {
           this.produto = produtos.map((produto, index) => ({
             id: produto.id,
+            nomeProduto: produto.nomeProduto,
             descricao: produto.descricao,
             unidade: produto.unidade,
             fornecedor: produto.fornecedor,
@@ -65,6 +66,7 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
       data: this.produto,
       columns: [
         { title: 'Id', data: 'id' },
+        { title: 'Nome', data: 'nomeProduto' },
         { title: 'Descrição', data: 'descricao' },
         { title: 'Unidade', data: 'unidade' },
         { title: 'Fornecedor', data: 'fornecedor' },
@@ -109,7 +111,6 @@ export class FichaEstoqueComponent implements OnInit, AfterViewInit {
 
         $(dataTable).on('click', '.kardex-button', (event) => {
           const id = dataTableInstance.row($(event.target).closest('tr')).data().id;
-          console.log(id);
           this.redirectToKardex(id);
         });
       }

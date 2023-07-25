@@ -5,7 +5,7 @@ import { Estoque } from 'src/app/models/estoque.model';
 import { EstoqueService } from 'src/app/services/estoque.service';
 
 @Component({
-selector: 'modalEntrada',
+  selector: 'modalEntrada',
   templateUrl: './modalEntrada.component.html',
   styleUrls: ['./modalEntrada.component.scss']
 })

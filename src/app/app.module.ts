@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MdbModalService } from 'mdb-angular-ui-kit/modal';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MdbModalService } from 'mdb-angular-ui-kit/modal';
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    CurrencyMaskModule,
   ],
   providers: [MdbModalService],
   bootstrap: [AppComponent]

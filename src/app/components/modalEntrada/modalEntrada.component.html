@@ -1,38 +1,47 @@
 <html>
     <head>
         <title>Modal de Entrada</title>
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     </head>
     <body>
         <div class="fundo-modal">
             <div class="modal-header">
                 <h5 class="modal-title" id="modalEntrada">Entrada no estoque</h5>
-                <button type="button" class="btn-close" aria-label="Close" (click)="modalRef.close()"><i class="bi bi-x"></i></button>
+                <button type="button" class="btn-close" aria-label="Close"
+                    (click)="modalRef.close()">
+                    <i class="bi bi-x"></i>
+                </button>
             </div>
             <div class="modal-body">
                 <form class="form-inputs" [formGroup]="estoqueForm">
                     <div class="group-input mb-3">
                         <label for="produto" class="form-label">Produto</label>
-                        <input type="text" class="form-control" id="produto" formControlName="produto" [value]="nomeProduto" readonly>
+                        <input type="text" class="form-control" id="produto"
+                            formControlName="produto" [value]="nomeProduto"
+                            readonly>
                     </div>
                     <div class="group-input mb-3">
                         <label for="quantidadeEstoque" class="form-label">Quantidade</label>
-                        <input type="number" class="form-control" id="quantidadeEstoque" formControlName="quantidadeEstoque" placeholder="Quantidade">
+                        <input type="number" class="form-control"
+                            id="quantidadeEstoque"
+                            formControlName="quantidadeEstoque"
+                            placeholder="Quantidade">
                     </div>
-                    <div class="group-input mb-3">
+                    <div class="group-input mb-3"> 
                         <label for="valorUnitarioEstoque" class="form-label">Valor unitário</label>
-                        <input type="number" class="form-control" id="valorUnitarioEstoque" formControlName="valorUnitarioEstoque" placeholder="Valor unitário do item">
+                        <input type="text" class="form-control" id="valorUnitarioEstoque" formControlName="valorUnitarioEstoque" placeholder="Valor unitário do item" currencyMask [options]="{ prefix: 'R$ ', align: 'left' }">
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="modalRef.close()">
+                <button type="button" class="btn btn-secondary"
+                    (click)="modalRef.close()">
                     <i class="bi bi-x"></i> Fechar
                 </button>
-                <button type="button" class="btn btn-primary" (click)="EntradaEstoque()">
-                    <i class="bi bi-check" ></i> Salvar
+                <button type="button" class="btn btn-primary"
+                    (click)="EntradaEstoque()">
+                    <i class="bi bi-check"></i> Salvar
                 </button>
             </div>
         </div>

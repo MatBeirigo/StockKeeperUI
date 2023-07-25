@@ -23,7 +23,7 @@
                     </div>
                     <div class="group-input mb-3">
                         <label for="valorUnitarioEstoque" class="form-label">Valor unitário</label>
-                        <input type="number" class="form-control" id="valorUnitarioEstoque" formControlName="valorUnitarioEstoque" [value]="valorUnitarioEstoque">
+                        <input type="text" class="form-control" id="valorUnitarioEstoque" formControlName="valorUnitarioEstoque" [value]="valorUnitarioEstoque" currencyMask [options]="{ prefix: 'R$ ', align: 'left' }">
                     </div>
                 </form>
             </div>
