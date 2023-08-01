@@ -11,8 +11,12 @@ export class LoginService{
 
     private readonly baseUrl = environment["endPoint"];
 
-    login(Email:string, Password:string)
+    login(Email:string, Password:string, RememberMe: boolean)
     {
-        return this.httpClient.post<any>(`${this.baseUrl}/CreateToken`, { Email: Email, Password: Password });
+        return this.httpClient.post<any>(`${this.baseUrl}/CreateToken`, { Email, Password, RememberMe });
+    }
+
+    forgotPassword(Email: string) {
+        return this.httpClient.post<any>(`${this.baseUrl}/EsqueciMinhaSenha`, { Email });
     }
 }

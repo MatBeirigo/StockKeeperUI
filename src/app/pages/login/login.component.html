@@ -32,11 +32,11 @@
                     <div class="group-input">
                         <div class="remember-forgot">
                             <div class="remember-me">
-                                <input type="checkbox" id="remember-me">
+                                <input type="checkbox" id="remember-me" formControlName="rememberMe">
                                 <label for="remember-me">Lembrar-me</label>
                             </div>
                             <div class="forgot-password">
-                                <a href="#" class="link-forgot">Esqueceu a senha?</a>
+                                <a href="#" class="link-forgot" (click)="onForgotPasswordClick()">Esqueceu a senha?</a>
                             </div>
                         </div>
                     </div>

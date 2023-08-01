@@ -21,7 +21,8 @@ export class LoginComponent {
   ngOnInit():void {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
+      rememberMe: [false]
     });
   }
 
@@ -33,7 +34,8 @@ export class LoginComponent {
     this.loginService
       .login(
         this.dadosForm["email"].value, 
-        this.dadosForm["password"].value
+        this.dadosForm["password"].value,
+        this.dadosForm["rememberMe"].value
       ).subscribe(
       token => {
         this.router.navigate(['/dashboard']);
@@ -42,5 +44,19 @@ export class LoginComponent {
         alert('Ocorreu um erro ao tentar logar');
       }
     )
+  }
+
+  onForgotPasswordClick() {
+    this.loginService
+    .forgotPassword(
+      this.dadosForm["email"].value
+      ).subscribe(
+            response => {
+                alert(response);
+            },
+            error => {
+                alert('Ocorreu um erro ao solicitar a redefinição de senha.');
+            }
+      );
   }
 }
